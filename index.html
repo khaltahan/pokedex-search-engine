@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <title>Khalid's Pokédex</title>
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
       rel="icon"
       type="image/pmg"
       href="https://www.google.com/s2/u/0/favicons?domain=pokemon.com"
@@ -16,7 +20,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Khalid's Pokédex</h1>
+    <h1>SE3316 Pokédex</h1>
+    <!-- Wrapper class for search bars -->
+    <div class="bar-wrapper">
+      <!-- Number search bar -->
+      <div class="search-bars" id="bar-number">
+        <input type="number" placeholder="Search Pokémon Number" />
+        <a href="#"><i class="fa fa-search icon-search"></i></a>
+      </div>
+      <!-- Name search bar -->
+      <div class="search-bars" id="bar-name">
+        <input type="search" placeholder="Search Pokémon Name" />
+        <a href="#"><i class="fa fa-search icon-search"></i></a>
+      </div>
+    </div>
     <!-- Unordered List of Pokedex -->
     <ul>
       <li><img src="pokemon\1.png" alt="Bulbasaur" />#001<br />Bulbasaur</li>
@@ -40,9 +57,26 @@
       <li><img src="pokemon\19.png" alt="Rattata" />#019<br />Rattata</li>
       <li><img src="pokemon\20.png" alt="Raticate" />#020<br />Raticate</li>
     </ul>
-
-    <!-- Embedded JavaScript go here -->
+    <!-- References -->
+    <div class="references">
+      <small class="data"
+        >Pokémon data set from
+        <a
+          href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"
+          class="data"
+          >https://www.kaggle.com/kvpratama/pokemon-images-dataset</a
+        ></small
+      >
+    </div>
+    <div class="references">
+      <small class="excel"
+        >Pokémon excel from
+        <a
+          href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/"
+          class="excel"
+          >https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/</a
+        ></small
+      >
+    </div>
   </body>
 </html>
-Sample JavaScript for attaching an event handler
-<input type="text" onkeypress="myFunction()" />

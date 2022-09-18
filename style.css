@@ -17,6 +17,56 @@ h1 {
   font-weight: 700;
 }
 
+.bar-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.search-bars {
+  width: 26%;
+  border: 2px black solid;
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 255, 0.2);
+  padding: 8px;
+  border-radius: 30px;
+  margin: 80px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  background: transparent;
+  border: 0px;
+  outline: none;
+  width: max-content;
+  font-size: larger;
+  display: flex;
+  flex-grow: 2;
+}
+
+.icon-search {
+  color: rgba(0, 0, 255, 0.5);
+  font-size: larger;
+  margin-right: 10px;
+}
+
+/* Remove the arrow scroller for the number field */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove the clear button for the name field */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 ul {
   padding-left: 0;
   list-style: none;
@@ -46,4 +96,25 @@ li {
   font-weight: 800;
   border-radius: 15px;
   box-shadow: 0px 5px 5px 1px rgba(0, 0, 255, 0.2);
+}
+
+.references {
+  margin: 25px;
+  font-size: 1.1rem;
+  overflow-wrap: break-word;
+}
+
+.references a {
+  color: black;
+}
+
+/* Media Query: Tablet or Smaller */
+@media screen and (max-width: 1000px) {
+  .search-bars {
+    width: 500px;
+  }
+
+  #bar-number {
+    margin-bottom: 50px;
+  }
 }
