@@ -2,21 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khalid's Pokédex</title>
+    <!-- Search Icon -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- Tab Icon -->
     <link
       rel="icon"
       type="image/pmg"
       href="https://www.google.com/s2/u/0/favicons?domain=pokemon.com"
     />
+    <!-- Description -->
     <meta
       name="description"
       content="Created and designed to catalog and provide information regarding the various species of Pokémon featured in the Pokémon video game."
     />
+    <!-- Author -->
     <meta name="author" content="Khalid Altahan" />
+    <!-- Style (CSS) -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -25,58 +32,162 @@
     <div class="bar-wrapper">
       <!-- Number search bar -->
       <div class="search-bars" id="bar-number">
-        <input type="number" placeholder="Search Pokémon Number" />
-        <a href="#"><i class="fa fa-search icon-search"></i></a>
+        <form>
+          <input
+            type="number"
+            placeholder="Search Pokémon Number"
+            id="number-search"
+          />
+          <a href="#"
+            ><i class="fa fa-search icon-search" id="number-search-icon"></i
+          ></a>
+        </form>
       </div>
       <!-- Name search bar -->
       <div class="search-bars" id="bar-name">
-        <input type="search" placeholder="Search Pokémon Name" />
-        <a href="#"><i class="fa fa-search icon-search"></i></a>
+        <form>
+          <input
+            type="search"
+            placeholder="Search Pokémon Name"
+            maxlength="20"
+            id="name-search"
+            autocomplete="off"
+          />
+          <a href="#"
+            ><i class="fa fa-search icon-search" id="name-search-icon"></i
+          ></a>
+        </form>
       </div>
     </div>
     <!-- Unordered List of Pokedex -->
     <ul>
-      <li><img src="pokemon\1.png" alt="Bulbasaur" />#001<br />Bulbasaur</li>
-      <li><img src="pokemon\2.png" alt="Ivysaur" />#002<br />Ivysaur</li>
-      <li><img src="pokemon\3.png" alt="Venusaur" />#003<br />Venusaur</li>
-      <li><img src="pokemon\4.png" alt="Charmender" />#004<br />Charmender</li>
-      <li><img src="pokemon\5.png" alt="Charmeleon" />#005<br />Charmeleon</li>
-      <li><img src="pokemon\6.png" alt="Charizard" />#006<br />Charizard</li>
-      <li><img src="pokemon\7.png" alt="Squirtle" />#007<br />Squirtle</li>
-      <li><img src="pokemon\8.png" alt="Wartortle" />#008<br />Wartortle</li>
-      <li><img src="pokemon\9.png" alt="Blastoise" />#009<br />Blastoise</li>
-      <li><img src="pokemon\10.png" alt="Caterpie" />#010<br />Caterpie</li>
-      <li><img src="pokemon\11.png" alt="Metapod" />#011<br />Metapod</li>
-      <li><img src="pokemon\12.png" alt="Butterfree" />#012<br />Butterfree</li>
-      <li><img src="pokemon\13.png" alt="Weedle" />#013<br />Weedle</li>
-      <li><img src="pokemon\14.png" alt="Kakuna" />#014<br />Kakuna</li>
-      <li><img src="pokemon\15.png" alt="Beedrill" />#015<br />Beedrill</li>
-      <li><img src="pokemon\16.png" alt="Pidhey" />#016<br />Pidhey</li>
-      <li><img src="pokemon\17.png" alt="Pidgeotto" />#017<br />Pidgeotto</li>
-      <li><img src="pokemon\18.png" alt="Pidgeot" />#018<br />Pidgeot</li>
-      <li><img src="pokemon\19.png" alt="Rattata" />#019<br />Rattata</li>
-      <li><img src="pokemon\20.png" alt="Raticate" />#020<br />Raticate</li>
+      <li>
+        <img src="pokemon\1.png" alt="Bulbasaur" />#001<br />Bulbasaur<br />
+        <div>
+          <mark class="grass">Grass</mark><mark class="poison">Poison</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\2.png" alt="Ivysaur" />#002<br />Ivysaur<br />
+        <div>
+          <mark class="grass">Grass</mark><mark class="poison">Poison</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\3.png" alt="Venusaur" />#003<br />Venusaur<br />
+        <div>
+          <mark class="grass">Grass</mark><mark class="poison">Poison</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\4.png" alt="Charmender" />#004<br />Charmender<br />
+        <div>
+          <mark class="fire">Fire</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\5.png" alt="Charmeleon" />#005<br />Charmeleon<br />
+        <div>
+          <mark class="fire">Fire</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\6.png" alt="Charizard" />#006<br />Charizard
+        <br />
+        <div>
+          <mark class="fire">Fire</mark><mark class="flying">Flying</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\7.png" alt="Squirtle" />#007<br />Squirtle<br />
+        <div>
+          <mark class="water">Water</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\8.png" alt="Wartortle" />#008<br />Wartortle<br />
+        <div>
+          <mark class="water">Water</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\9.png" alt="Blastoise" />#009<br />Blastoise<br />
+        <div>
+          <mark class="water">Water</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\10.png" alt="Caterpie" />#010<br />Caterpie<br />
+        <div>
+          <mark class="bug">Bug</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\11.png" alt="Metapod" />#011<br />Metapod<br />
+        <div>
+          <mark class="bug">Bug</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\12.png" alt="Butterfree" />#012<br />Butterfree
+        <br />
+        <div>
+          <mark class="bug">Bug</mark><mark class="flying">Flying</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\13.png" alt="Weedle" />#013<br />Weedle<br />
+        <div>
+          <mark class="bug">Bug</mark><mark class="poison">Poison</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\14.png" alt="Kakuna" />#014<br />Kakuna<br />
+        <div>
+          <mark class="bug">Bug</mark><mark class="poison">Poison</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\15.png" alt="Beedrill" />#015<br />Beedrill<br />
+        <div>
+          <mark class="bug">Bug</mark><mark class="poison">Poison</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\16.png" alt="Pidhey" />#016<br />Pidhey
+        <br />
+        <div>
+          <mark class="normal">Normal</mark><mark class="flying">Flying</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\17.png" alt="Pidgeotto" />#017<br />Pidgeotto
+        <br />
+        <div>
+          <mark class="normal">Normal</mark><mark class="flying">Flying</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\18.png" alt="Pidgeot" />#018<br />Pidgeot
+        <br />
+        <div>
+          <mark class="normal">Normal</mark><mark class="flying">Flying</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\19.png" alt="Rattata" />#019<br />Rattata <br />
+        <div>
+          <mark class="normal">Normal</mark>
+        </div>
+      </li>
+      <li>
+        <img src="pokemon\20.png" alt="Raticate" />#020<br />Raticate <br />
+        <div>
+          <mark class="normal">Normal</mark>
+        </div>
+      </li>
     </ul>
-    <!-- References -->
-    <div class="references">
-      <small class="data"
-        >Pokémon data set from
-        <a
-          href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"
-          class="data"
-          >https://www.kaggle.com/kvpratama/pokemon-images-dataset</a
-        ></small
-      >
-    </div>
-    <div class="references">
-      <small class="excel"
-        >Pokémon excel from
-        <a
-          href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/"
-          class="excel"
-          >https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/</a
-        ></small
-      >
-    </div>
+    <!-- Script (JS) -->
+    <script src="script.js"></script>
   </body>
 </html>
