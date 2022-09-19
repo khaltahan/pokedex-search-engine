@@ -155,6 +155,16 @@ mark {
   background-color: rgb(147, 244, 207);
 }
 
+.references {
+  margin: 25px;
+  font-size: 1.1rem;
+  overflow-wrap: break-word;
+}
+
+.references a {
+  color: black;
+}
+
 /* Media Query: Tablet or Smaller */
 @media screen and (max-width: 1000px) {
   .search-bars {
