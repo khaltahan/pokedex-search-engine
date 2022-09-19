@@ -57,6 +57,7 @@ form {
   color: rgba(0, 0, 255, 0.5);
   font-size: larger;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 /* Remove the arrow scroller for the number field */
