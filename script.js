@@ -15,11 +15,13 @@ function numberEnter(event) {
   if (event.key === "Enter") {
     // Get users input
     var userNumber = numberInput.value;
-    // Alert user uf input is unvalid
+    // Alert user if input is unvalid
     if (userNumber < 1 || userNumber > 20) {
       alert(
         "Invalid Search! Please input a number that is greater than 1 and smaller than 20."
       );
+    } else {
+      filterNumberResults(userNumber);
     }
   }
 }
@@ -32,9 +34,9 @@ function nameEnter(event) {
     // Alert user uf input is anvalid
     if (!lettersOnly(userName)) {
       alert("Invalid Search! Only inputs from A-Z or a-z are allowed");
-      location.reload(true);
+    } else {
+      filterNameResults(userName);
     }
-    filterResults(userName);
   }
 }
 
@@ -45,6 +47,8 @@ function numberSearchIcon() {
     alert(
       "Invalid Search! Please input a number that is greater than 1 and smaller than 20."
     );
+  } else {
+    filterNumberResults(userNumber);
   }
 }
 
@@ -55,7 +59,7 @@ function nameSearchIcon() {
   if (!lettersOnly(userName)) {
     alert("Invalid Search! Only inputs from A-Z or a-z are allowed");
   } else {
-    filterResults(userName);
+    filterNameResults(userName);
   }
 }
 
@@ -171,16 +175,32 @@ let pokemon = [
 // This array will be used to hold the results that match the user's entry
 let alertArray = [];
 
-// Function to filter through the pokemon and find matches
-function filterResults(userName) {
+// Function to filter through the pokemon names and find matches
+function filterNameResults(userName) {
   // Convert user-input to lowercase
   let userInput = userName.toLowerCase();
   // For-loop to itterate through pokemon array
-  for (let i = 0; i < pokemon.length - 1; i++) {
+  for (let i = 0; i < pokemon.length; i++) {
     // Convert pokemon name to lowercase
     let pokemonName = pokemon[i].name.toLowerCase();
     // If pokemon name consists of user input, add the pokemon object to alertArray
     if (pokemonName.includes(userInput)) {
+      alertArray.push(pokemon[i]);
+    }
+  }
+  // Call displayResults()
+  displayResults();
+}
+
+// Function to filter through the pokemon numbers and find matches
+function filterNumberResults(userNumber) {
+  let userInput = userNumber;
+  // For-loop to itterate through pokemon array
+  for (let i = 0; i < pokemon.length; i++) {
+    let pokemonNumber = pokemon[i].id;
+    console.log(pokemonNumber);
+    // If pokemon name consists of user input, add the pokemon object to alertArray
+    if (pokemonNumber.includes(userInput)) {
       alertArray.push(pokemon[i]);
     }
   }
@@ -195,7 +215,6 @@ function displayResults() {
   // If no matches are found
   if (alertArray.length === 0) {
     alert("No results found, please try again!");
-    location.reload();
   } else {
     // If less than 5 matches found
     if (alertArray.length < 6) {
