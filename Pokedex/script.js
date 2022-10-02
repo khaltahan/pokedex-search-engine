@@ -3,70 +3,42 @@ const numberInput = document.getElementById("number-search");
 const nameInput = document.getElementById("name-search");
 const numberSearchIconE = document.getElementById("number-search-icon");
 const nameSearchIconE = document.getElementById("name-search-icon");
+let dynamicUl = document.getElementById("dynamic-ul");
 
 // Event listeners to listen to key presses and mouse clicks, and call other functions
-numberInput.addEventListener("keydown", numberEnter);
-nameInput.addEventListener("keydown", nameEnter);
-numberSearchIconE.addEventListener("click", numberSearchIcon);
-nameSearchIconE.addEventListener("click", nameSearchIcon);
+numberInput.addEventListener("keyup", numberEnter);
+nameInput.addEventListener("keyup", nameEnter);
 
-// Function to determine if user inputted the Enter key
+// This array will be used to hold the results that match the user's entry
+let alertArray = [];
+
+// Function called after every user numper input
 function numberEnter(event) {
-  if (event.key === "Enter") {
-    // Get users input
-    var userNumber = numberInput.value;
-    // Alert user if input is unvalid
-    if (userNumber < 1 || userNumber > 20) {
-      alert(
-        "Invalid Search! Please input a number that is greater than 1 and smaller than 20."
-      );
-    } else {
-      filterNumberResults(userNumber);
-    }
+  // Clear all child elements of dynamic ul
+  let child = dynamicUl.lastElementChild;
+  while (child) {
+    dynamicUl.removeChild(child);
+    child = dynamicUl.lastElementChild;
   }
+  // Get users input
+  var userNumber = numberInput.value;
+  // Clear array
+  alertArray = [];
+  filterNumberResults(userNumber);
 }
 
 // Function to determine if user inputted the Enter key
 function nameEnter(event) {
-  if (event.key === "Enter") {
-    // Get users input
-    var userName = nameInput.value;
-    // Alert user uf input is anvalid
-    if (!lettersOnly(userName)) {
-      alert("Invalid Search! Only inputs from A-Z or a-z are allowed");
-    } else {
-      filterNameResults(userName);
-    }
-  }
-}
-
-// Function to execute when user clicks on search icon
-function numberSearchIcon() {
-  // Alert user uf input is unvalid
-  if (userNumber < 1 || userNumber > 20) {
-    alert(
-      "Invalid Search! Please input a number that is greater than 1 and smaller than 20."
-    );
-  } else {
-    filterNumberResults(userNumber);
-  }
-}
-
-// Function to execute when user clicks on search icon
-function nameSearchIcon() {
+  // Get users input
   var userName = nameInput.value;
-  // Alert user if input is anvalid
-  if (!lettersOnly(userName)) {
-    alert("Invalid Search! Only inputs from A-Z or a-z are allowed");
-  } else {
-    filterNameResults(userName);
-  }
+  alert(userName);
+  filterNameResults(userName);
 }
 
 // Function to return true if the parameter only contains letters
-function lettersOnly(str) {
-  return /^[a-zA-Z]+$/.test(str);
-}
+// function lettersOnly(str) {
+//   return /^[a-zA-Z]+$/.test(str);
+// }
 
 // Array of objects to carry the name, id, and attribute of each pokemon
 let pokemon = [
@@ -172,9 +144,6 @@ let pokemon = [
   },
 ];
 
-// This array will be used to hold the results that match the user's entry
-let alertArray = [];
-
 // Function to filter through the pokemon names and find matches
 function filterNameResults(userName) {
   // Convert user-input to lowercase
@@ -198,7 +167,6 @@ function filterNumberResults(userNumber) {
   // For-loop to itterate through pokemon array
   for (let i = 0; i < pokemon.length; i++) {
     let pokemonNumber = pokemon[i].id;
-    console.log(pokemonNumber);
     // If pokemon name consists of user input, add the pokemon object to alertArray
     if (pokemonNumber.includes(userInput)) {
       alertArray.push(pokemon[i]);
@@ -208,40 +176,11 @@ function filterNumberResults(userNumber) {
   displayResults();
 }
 
-// Function to alert the top 5 matches
 function displayResults() {
-  // Counter to keep track of how many macthes were found based on user input
-  let resultsCounter;
-  // If no matches are found
-  if (alertArray.length === 0) {
-    alert("No results found, please try again!");
-  } else {
-    // If less than 5 matches found
-    if (alertArray.length < 6) {
-      resultsCounter = alertArray.length;
-    }
-    // If 5 matches found
-    else {
-      resultsCounter = 5;
-    }
-    // Text to be alerted to user
-    let text =
-      "" +
-      alertArray.length +
-      " results were found! Here are the top results: \n";
-    for (let i = 0; i < resultsCounter; i++) {
-      text +=
-        "Pokémon Name: " +
-        alertArray[i].name +
-        "     ID: #" +
-        alertArray[i].id +
-        "     Attributes: " +
-        alertArray[i].attributes +
-        "\n";
-    }
-    // Alert text
-    alert(text);
-    // Clear array after displaying results
-    alertArray = [];
+  for (let i = 0; i < alertArray.length; i++) {
+    let pokemonId = document.getElementById(alertArray[i].id);
+    let clonePokemonId = pokemonId.cloneNode(true);
+    clonePokemonId.removeAttribute("id");
+    dynamicUl.appendChild(clonePokemonId);
   }
 }
