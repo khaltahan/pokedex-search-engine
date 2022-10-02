@@ -82,6 +82,15 @@ ul {
   margin-right: 5%;
 }
 
+#dynamic-ul {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border: rgba(0, 0, 0, 0.345) 8px solid;
+  border-radius: 15px;
+}
+
 img {
   width: 10rem;
   max-width: 256px;

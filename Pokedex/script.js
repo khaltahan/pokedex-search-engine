@@ -23,7 +23,9 @@ function numberEnter(event) {
   console.log(event);
   // Clear array
   alertArray = [];
-  filterNumberResults(userNumber);
+  if (userNumber != "") {
+    filterNumberResults(userNumber);
+  }
 }
 
 // Function to determine if user inputted the Enter key
@@ -39,7 +41,9 @@ function nameEnter(event) {
   console.log(event);
   // Clear array
   alertArray = [];
-  filterNameResults(userName);
+  if (userName != "") {
+    filterNameResults(userName);
+  }
 }
 
 // Function to return true if the parameter only contains letters
