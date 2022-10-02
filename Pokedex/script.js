@@ -1,9 +1,7 @@
 // JavaScript HTML DOM Elements needed for code
 const numberInput = document.getElementById("number-search");
 const nameInput = document.getElementById("name-search");
-const numberSearchIconE = document.getElementById("number-search-icon");
-const nameSearchIconE = document.getElementById("name-search-icon");
-let dynamicUl = document.getElementById("dynamic-ul");
+const dynamicUl = document.getElementById("dynamic-ul");
 
 // Event listeners to listen to key presses and mouse clicks, and call other functions
 numberInput.addEventListener("keyup", numberEnter);
@@ -22,6 +20,7 @@ function numberEnter(event) {
   }
   // Get users input
   var userNumber = numberInput.value;
+  console.log(event);
   // Clear array
   alertArray = [];
   filterNumberResults(userNumber);
@@ -29,9 +28,17 @@ function numberEnter(event) {
 
 // Function to determine if user inputted the Enter key
 function nameEnter(event) {
+  // Clear all child elements of dynamic ul
+  let child = dynamicUl.lastElementChild;
+  while (child) {
+    dynamicUl.removeChild(child);
+    child = dynamicUl.lastElementChild;
+  }
   // Get users input
   var userName = nameInput.value;
-  alert(userName);
+  console.log(event);
+  // Clear array
+  alertArray = [];
   filterNameResults(userName);
 }
 
