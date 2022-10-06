@@ -1,57 +1,3 @@
-// JavaScript HTML DOM Elements needed for code
-const numberInput = document.getElementById("number-search");
-const nameInput = document.getElementById("name-search");
-const dynamicUl = document.getElementById("dynamic-ul");
-
-// Event listeners to listen to key presses and mouse clicks, and call other functions
-numberInput.addEventListener("keyup", numberEnter);
-nameInput.addEventListener("keyup", nameEnter);
-
-// This array will be used to hold the results that match the user's entry
-let alertArray = [];
-
-// Function called after every user numper input
-function numberEnter(event) {
-  // Clear all child elements of dynamic ul
-  let child = dynamicUl.lastElementChild;
-  while (child) {
-    dynamicUl.removeChild(child);
-    child = dynamicUl.lastElementChild;
-  }
-  // Get users input
-  var userNumber = numberInput.value;
-  console.log(event);
-  // Clear array
-  alertArray = [];
-  if (userNumber != "") {
-    filterNumberResults(userNumber);
-  }
-}
-
-// Function to determine if user inputted the Enter key
-function nameEnter(event) {
-  // Clear all child elements of dynamic ul
-  let child = dynamicUl.lastElementChild;
-  while (child) {
-    dynamicUl.removeChild(child);
-    child = dynamicUl.lastElementChild;
-  }
-  // Get users input
-  var userName = nameInput.value;
-  console.log(event);
-  // Clear array
-  alertArray = [];
-  if (userName != "") {
-    filterNameResults(userName);
-  }
-}
-
-// Function to return true if the parameter only contains letters
-// function lettersOnly(str) {
-//   return /^[a-zA-Z]+$/.test(str);
-// }
-
-// Array of objects to carry the name, id, and attribute of each pokemon
 let pokemon = [
   {
     name: "Bulbasaur",
@@ -155,35 +101,60 @@ let pokemon = [
   },
 ];
 
-// Function to filter through the pokemon names and find matches
+const numberInput = document.getElementById("number-search");
+const nameInput = document.getElementById("name-search");
+const dynamicUl = document.getElementById("dynamic-ul");
+numberInput.addEventListener("keyup", numberEnter);
+nameInput.addEventListener("keyup", nameEnter);
+let alertArray = [];
+
+function numberEnter(event) {
+  let child = dynamicUl.lastElementChild;
+  while (child) {
+    dynamicUl.removeChild(child);
+    child = dynamicUl.lastElementChild;
+  }
+  var userNumber = numberInput.value;
+  console.log(event);
+  alertArray = [];
+  if (userNumber != "") {
+    filterNumberResults(userNumber);
+  }
+}
+
+function nameEnter(event) {
+  let child = dynamicUl.lastElementChild;
+  while (child) {
+    dynamicUl.removeChild(child);
+    child = dynamicUl.lastElementChild;
+  }
+  var userName = nameInput.value;
+  console.log(event);
+  alertArray = [];
+  if (userName != "") {
+    filterNameResults(userName);
+  }
+}
+
 function filterNameResults(userName) {
-  // Convert user-input to lowercase
   let userInput = userName.toLowerCase();
-  // For-loop to itterate through pokemon array
   for (let i = 0; i < pokemon.length; i++) {
-    // Convert pokemon name to lowercase
     let pokemonName = pokemon[i].name.toLowerCase();
-    // If pokemon name consists of user input, add the pokemon object to alertArray
     if (pokemonName.includes(userInput)) {
       alertArray.push(pokemon[i]);
     }
   }
-  // Call displayResults()
   displayResults();
 }
 
-// Function to filter through the pokemon numbers and find matches
 function filterNumberResults(userNumber) {
   let userInput = userNumber;
-  // For-loop to itterate through pokemon array
   for (let i = 0; i < pokemon.length; i++) {
     let pokemonNumber = pokemon[i].id;
-    // If pokemon name consists of user input, add the pokemon object to alertArray
     if (pokemonNumber.includes(userInput)) {
       alertArray.push(pokemon[i]);
     }
   }
-  // Call displayResults()
   displayResults();
 }
 
