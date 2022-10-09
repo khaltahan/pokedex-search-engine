@@ -4,82 +4,54 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Website title -->
     <title>Khalid's Pokédex</title>
     <!-- Search Icon -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- Tab Icon -->
-    <link
-      rel="icon"
-      type="image/pmg"
-      href="https://www.google.com/s2/u/0/favicons?domain=pokemon.com"
-    />
+    <link rel="icon" type="image/pmg" href="https://www.google.com/s2/u/0/favicons?domain=pokemon.com" />
     <!-- Description -->
-    <meta
-      name="description"
-      content="Created and designed to catalog and provide information regarding the various species of Pokémon featured in the Pokémon video game."
-    />
+    <meta name="description" content="Pokemon search catalog." />
     <!-- Author -->
     <meta name="author" content="Khalid Altahan" />
     <!-- Style (CSS) -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header acting as title of webpage -->
     <h1>SE3316 Pokédex</h1>
     <!-- Wrapper class for search bars -->
     <div class="bar-wrapper">
       <!-- Number search bar -->
       <div class="search-bars" id="bar-number">
         <form>
-          <input
-            type="number"
-            placeholder="Search Pokémon Number"
-            id="number-search"
-          />
-          <a href="#"
-            ><i class="fa fa-search icon-search" id="number-search-icon"></i
-          ></a>
+          <input type="number" placeholder="Search Pokémon Number" id="number-search" />
+          <a href="#"><i class="fa fa-search icon-search" id="number-search-icon"></i></a>
         </form>
       </div>
       <!-- Name search bar -->
       <div class="search-bars" id="bar-name">
         <form>
-          <input
-            type="search"
-            placeholder="Search Pokémon Name"
-            maxlength="20"
-            id="name-search"
-            autocomplete="off"
-          />
-          <a href="#"
-            ><i class="fa fa-search icon-search" id="name-search-icon"></i
-          ></a>
+          <input type="search" placeholder="Search Pokémon Name" maxlength="20" id="name-search" autocomplete="off" />
+          <a href="#"><i class="fa fa-search icon-search" id="name-search-icon"></i></a>
         </form>
       </div>
     </div>
-    <!-- Dynamic ul to be created by JS -->
+    <!-- Dynamic Unordered List-->
     <ul id="dynamic-ul"></ul>
     <!-- Unordered List of Pokedex -->
     <ul>
       <li id="001">
         <img src="pokemon\1.png" alt="Bulbasaur" />#001<br />Bulbasaur<br />
-        <div>
-          <mark class="grass">Grass</mark><mark class="poison">Poison</mark>
-        </div>
+        <div><mark class="grass">Grass</mark><mark class="poison">Poison</mark></div>
       </li>
       <li id="002">
         <img src="pokemon\2.png" alt="Ivysaur" />#002<br />Ivysaur<br />
-        <div>
-          <mark class="grass">Grass</mark><mark class="poison">Poison</mark>
-        </div>
+        <div><mark class="grass">Grass</mark><mark class="poison">Poison</mark></div>
       </li>
       <li id="003">
         <img src="pokemon\3.png" alt="Venusaur" />#003<br />Venusaur<br />
-        <div>
-          <mark class="grass">Grass</mark><mark class="poison">Poison</mark>
-        </div>
+        <div><mark class="grass">Grass</mark><mark class="poison">Poison</mark></div>
       </li>
       <li id="004">
         <img src="pokemon\4.png" alt="Charmender" />#004<br />Charmender<br />
@@ -96,9 +68,7 @@
       <li id="006">
         <img src="pokemon\6.png" alt="Charizard" />#006<br />Charizard
         <br />
-        <div>
-          <mark class="fire">Fire</mark><mark class="flying">Flying</mark>
-        </div>
+        <div><mark class="fire">Fire</mark><mark class="flying">Flying</mark></div>
       </li>
       <li id="007">
         <img src="pokemon\7.png" alt="Squirtle" />#007<br />Squirtle<br />
@@ -133,48 +103,34 @@
       <li id="012">
         <img src="pokemon\12.png" alt="Butterfree" />#012<br />Butterfree
         <br />
-        <div>
-          <mark class="bug">Bug</mark><mark class="flying">Flying</mark>
-        </div>
+        <div><mark class="bug">Bug</mark><mark class="flying">Flying</mark></div>
       </li>
       <li id="013">
         <img src="pokemon\13.png" alt="Weedle" />#013<br />Weedle<br />
-        <div>
-          <mark class="bug">Bug</mark><mark class="poison">Poison</mark>
-        </div>
+        <div><mark class="bug">Bug</mark><mark class="poison">Poison</mark></div>
       </li>
       <li id="014">
         <img src="pokemon\14.png" alt="Kakuna" />#014<br />Kakuna<br />
-        <div>
-          <mark class="bug">Bug</mark><mark class="poison">Poison</mark>
-        </div>
+        <div><mark class="bug">Bug</mark><mark class="poison">Poison</mark></div>
       </li>
       <li id="015">
         <img src="pokemon\15.png" alt="Beedrill" />#015<br />Beedrill<br />
-        <div>
-          <mark class="bug">Bug</mark><mark class="poison">Poison</mark>
-        </div>
+        <div><mark class="bug">Bug</mark><mark class="poison">Poison</mark></div>
       </li>
       <li id="016">
         <img src="pokemon\16.png" alt="Pidhey" />#016<br />Pidhey
         <br />
-        <div>
-          <mark class="normal">Normal</mark><mark class="flying">Flying</mark>
-        </div>
+        <div><mark class="normal">Normal</mark><mark class="flying">Flying</mark></div>
       </li>
       <li id="017">
         <img src="pokemon\17.png" alt="Pidgeotto" />#017<br />Pidgeotto
         <br />
-        <div>
-          <mark class="normal">Normal</mark><mark class="flying">Flying</mark>
-        </div>
+        <div><mark class="normal">Normal</mark><mark class="flying">Flying</mark></div>
       </li>
       <li id="018">
         <img src="pokemon\18.png" alt="Pidgeot" />#018<br />Pidgeot
         <br />
-        <div>
-          <mark class="normal">Normal</mark><mark class="flying">Flying</mark>
-        </div>
+        <div><mark class="normal">Normal</mark><mark class="flying">Flying</mark></div>
       </li>
       <li id="019">
         <img src="pokemon\19.png" alt="Rattata" />#019<br />Rattata <br />
@@ -191,24 +147,10 @@
     </ul>
     <!-- References -->
     <div class="references">
-      <small class="data"
-        >Pokémon data set from
-        <a
-          href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"
-          class="data"
-          >https://www.kaggle.com/kvpratama/pokemon-images-dataset</a
-        ></small
-      >
+      <small class="data">Pokémon data set from <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset" class="data">https://www.kaggle.com/kvpratama/pokemon-images-dataset</a></small>
     </div>
     <div class="references">
-      <small class="excel"
-        >Pokémon excel from
-        <a
-          href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/"
-          class="excel"
-          >https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/</a
-        ></small
-      >
+      <small class="excel">Pokémon excel from <a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/" class="excel">https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/</a></small>
     </div>
     <!-- Script (JS) -->
     <script src="script.js"></script>
