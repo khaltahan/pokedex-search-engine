@@ -87,8 +87,9 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  border: rgba(0, 0, 0, 0.345) 8px solid;
+  border: rgba(0, 0, 0, 0.345) 2px solid;
   border-radius: 15px;
+  background-color: #a8d999;
 }
 
 img {
