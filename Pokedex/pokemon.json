@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Bulbasaur",
+    "id": "001",
+    "attributes": "Grass and Poison"
+  },
+  {
+    "name": "Ivysaur",
+    "id": "002",
+    "attributes": "Grass and Poison"
+  },
+  {
+    "name": "Venusaur",
+    "id": "003",
+    "attributes": "Grass and Poison"
+  },
+  {
+    "name": "Charmender",
+    "id": "004",
+    "attributes": "Fire"
+  },
+  {
+    "name": "Charmeleon",
+    "id": "005",
+    "attributes": "Fire"
+  },
+  {
+    "name": "Charizard",
+    "id": "006",
+    "attributes": "Fire and Flying"
+  },
+  {
+    "name": "Squirtle",
+    "id": "007",
+    "attributes": "Water"
+  },
+  {
+    "name": "Wartotle",
+    "id": "008",
+    "attributes": "Water"
+  },
+  {
+    "name": "Blastoise",
+    "id": "009",
+    "attributes": "Water"
+  },
+  {
+    "name": "Caterpie",
+    "id": "010",
+    "attributes": "Bug"
+  },
+  {
+    "name": "Metapod",
+    "id": "011",
+    "attributes": "Bug"
+  },
+  {
+    "name": "Butterfree",
+    "id": "012",
+    "attributes": "Bug and Flying"
+  },
+  {
+    "name": "Weedle",
+    "id": "013",
+    "attributes": "Bug and Poison"
+  },
+  {
+    "name": "Kakuna",
+    "id": "014",
+    "attributes": "Bug and Poison"
+  },
+  {
+    "name": "Beedrill",
+    "id": "015",
+    "attributes": "Bug and Poison"
+  },
+  {
+    "name": "Pidhey",
+    "id": "016",
+    "attributes": "Normal and Flying"
+  },
+  {
+    "name": "Pidgeotto",
+    "id": "017",
+    "attributes": "Normal and Flying"
+  },
+  {
+    "name": "Pidgeot",
+    "id": "018",
+    "attributes": "Normal and Flying"
+  },
+  {
+    "name": "Rattata",
+    "id": "019",
+    "attributes": "Normal"
+  },
+  {
+    "name": "Raticate",
+    "id": "020",
+    "attributes": "Normal"
+  }
+]
