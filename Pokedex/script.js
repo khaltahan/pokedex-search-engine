@@ -1,3 +1,4 @@
+// Pokemon array of objects
 let pokemon = [
   {
     name: "Bulbasaur",
@@ -101,41 +102,57 @@ let pokemon = [
   },
 ];
 
+// Required elements
 const numberInput = document.getElementById("number-search");
 const nameInput = document.getElementById("name-search");
 const dynamicUl = document.getElementById("dynamic-ul");
+
+// Event listeners needed
 numberInput.addEventListener("keyup", numberEnter);
 nameInput.addEventListener("keyup", nameEnter);
+
+// Array that will carry matching results with user's entry
 let alertArray = [];
 
+// When a key is clicked in the number search box
 function numberEnter(event) {
+  // Clear the elements in the dynamic ul
   let child = dynamicUl.lastElementChild;
   while (child) {
     dynamicUl.removeChild(child);
     child = dynamicUl.lastElementChild;
   }
+  // Grab user's input
   var userNumber = numberInput.value;
   console.log(event);
+  // Clear the array with the previous matching results
   alertArray = [];
+  // If the user's entry was not null, call the next method
   if (userNumber != "") {
     filterNumberResults(userNumber);
   }
 }
 
+// When a key is clicked in the name search box
 function nameEnter(event) {
+  // Clear the elements in the dynamic ul
   let child = dynamicUl.lastElementChild;
   while (child) {
     dynamicUl.removeChild(child);
     child = dynamicUl.lastElementChild;
   }
+  // Grab user's input
   var userName = nameInput.value;
   console.log(event);
+  // Clear the array with the previous matching results
   alertArray = [];
+  // If the user's entry was not null, call the next method
   if (userName != "") {
     filterNameResults(userName);
   }
 }
 
+// Funtion to filter the names that match with user input and send them to alertArray
 function filterNameResults(userName) {
   let userInput = userName.toLowerCase();
   for (let i = 0; i < pokemon.length; i++) {
@@ -144,9 +161,11 @@ function filterNameResults(userName) {
       alertArray.push(pokemon[i]);
     }
   }
+  // Call next method
   displayResults();
 }
 
+// Funtion to filter the number that match with user input and send them to alertArray
 function filterNumberResults(userNumber) {
   let userInput = userNumber;
   for (let i = 0; i < pokemon.length; i++) {
@@ -155,14 +174,20 @@ function filterNumberResults(userNumber) {
       alertArray.push(pokemon[i]);
     }
   }
+  // Call next method
   displayResults();
 }
 
+// Display the results by dynamically adding the elements into the dynamic-ul in our HTML file
 function displayResults() {
   for (let i = 0; i < alertArray.length; i++) {
+    // Get the element in our HTML file that has the same ID as the element the user inputted
     let pokemonId = document.getElementById(alertArray[i].id);
+    // Clone that element
     let clonePokemonId = pokemonId.cloneNode(true);
+    // Remove its ID so that when we add it into the list there won't be elements with the same ID
     clonePokemonId.removeAttribute("id");
+    // Add the cloned element in the dynamic-ul
     dynamicUl.appendChild(clonePokemonId);
   }
 }
